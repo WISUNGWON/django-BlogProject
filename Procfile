@@ -1,1 +1,3 @@
-web: gunicorn blogpjt.wsgi --log-file -
+web: gunicorn blogpjt.wsgi:application --log-file - --log-level debug
+python manage.py collectstatic --noinput
+manage.py migrate
